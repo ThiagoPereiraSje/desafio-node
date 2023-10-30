@@ -1,0 +1,16 @@
+# Comandos para a criação da imagem
+FROM node:18
+WORKDIR /app
+COPY package.json .
+
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
+
+RUN npm install
+COPY . .
+
+ENV PORT=3000
+EXPOSE $PORT
+
+# Comandos que executam quando o container é criado
+CMD [ "node", "index.js" ]
