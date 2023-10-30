@@ -14,9 +14,7 @@ services:
     
 
   fc-node-app:
-    build: 
-      context: ./app
-      dockerfile: Dockerfile.dev
+    build: .
     image: thiagopereira/fc-node-app
     networks:
       - public

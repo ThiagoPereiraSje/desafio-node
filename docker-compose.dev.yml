@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  fc-node-app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile.dev
