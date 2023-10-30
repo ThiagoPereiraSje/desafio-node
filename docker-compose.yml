@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    networks:
+      - public
+    depends_on:
+      - fc-node-app
+    
+
+  fc-node-app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile.dev
+    image: thiagopereira/fc-node-app
+    networks:
+      - public
+
+
+  networks:
+    public:
+      driver: bridge
