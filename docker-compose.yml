@@ -20,6 +20,6 @@ services:
       - public
 
 
-  networks:
-    public:
-      driver: bridge
+networks:
+  public:
+    driver: bridge
