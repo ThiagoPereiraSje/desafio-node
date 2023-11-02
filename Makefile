@@ -1,4 +1,4 @@
-services="fc-node-app"
+services="nginx fc-node-app"
 
 dc_dev_run() {
   # Executar containers em modo de desenvolvimento
