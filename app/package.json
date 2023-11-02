@@ -4,7 +4,7 @@
   "description": "Api Nodejs utilizando Express",
   "main": "index.js",
   "scripts": {
-    "prestart": "echo executar as migrações",
+    "prestart": "knex migrate:latest",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "knex": "^3.0.1",
     "mysql": "^2.18.1"
   }
 }

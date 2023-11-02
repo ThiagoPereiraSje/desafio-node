@@ -31,6 +31,8 @@ services:
     environment: 
       - MYSQL_DATABASE=fc-node-app
       - MYSQL_ROOT_PASSWORD=fc-node-app
+    ports:
+      - "3306:3306"
     networks:
       - public
     command: --innodb-use-native-aio=0
