@@ -18,8 +18,27 @@ services:
     image: thiagopereira/fc-node-app
     networks:
       - public
+    depends_on:
+      - mysql
 
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    tty: true
+    volumes: 
+      - mysql_data:/var/lib/mysql
+    environment: 
+      - MYSQL_DATABASE=fc-node-app
+      - MYSQL_ROOT_PASSWORD=fc-node-app
+    networks:
+      - public
+    command: --innodb-use-native-aio=0
 
 networks:
   public:
     driver: bridge
+
+
+volumes:
+  mysql_data:

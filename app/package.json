@@ -4,6 +4,7 @@
   "description": "Api Nodejs utilizando Express",
   "main": "index.js",
   "scripts": {
+    "prestart": "echo executar as migrações",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
