@@ -5,4 +5,5 @@ services:
     build: 
       context: ./app
       dockerfile: Dockerfile.prod
+    entrypoint: dockerize -wait tcp://mysql:3306 -timeout 20s docker-entrypoint.sh
     command: npm start

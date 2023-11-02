@@ -22,4 +22,23 @@ module.exports = {
       directory: "./migrations/v1",
     }
   },
+
+  production: {
+    client: 'mysql',
+    connection: {
+      host: 'mysql',
+      port: 3306,
+      database: 'fc-node-app',
+      user:     'root',
+      password: 'fc-node-app'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: "./migrations/v1",
+    }
+  },
 };
