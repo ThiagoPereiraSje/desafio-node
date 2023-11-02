@@ -5,4 +5,4 @@ services:
     build: 
       context: ./app
       dockerfile: Dockerfile.dev
-    command: node index.js
+    command: npm start
