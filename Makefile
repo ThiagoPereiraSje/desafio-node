@@ -17,22 +17,22 @@ dc_dev_rb() {
 
 dc_build() {
   # Apenas fazer o build da imagem
-  docker-compose -f docker-compose.yml -f docker-compose.prod.yml build $services
+  docker-compose -f docker-compose.yml build $services
 }
 
 dc_prod_run() {
   # Apenas executar o container em modo de produção
-  docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+  docker-compose -f docker-compose.yml up -d
 }
 
 dc_prod_rb() {
   # Executar containers em modo de produção e forçar o rebuild
-  docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build $services
+  docker-compose -f docker-compose.yml up -d --build $services
 }
 
 dc_prod_down() {
   # Parar todos os containers em modo de produção
-  docker-compose -f docker-compose.yml -f docker-compose.prod.yml down
+  docker-compose -f docker-compose.yml down
 }
 
 # Executar a função pelo nome

@@ -14,7 +14,11 @@ services:
     
 
   fc-node-app:
-    build: .
+    build: 
+      context: ./app
+      dockerfile: Dockerfile.prod
+    entrypoint: dockerize -wait tcp://mysql:3306 -timeout 20s docker-entrypoint.sh
+    command: npm start
     image: thiagopereira/fc-node-app
     networks:
       - public
